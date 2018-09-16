@@ -10,6 +10,7 @@ var burger_model = require("../models/burger.js");
 
 //GET METHOD
 router.get("/", function(request, response){
+
     burger_model.selectAll(function(data){
         var hbsObject = {
             //UNCERTAIN if "burgers" is correct
@@ -22,6 +23,7 @@ router.get("/", function(request, response){
 
 //POST METHOD
 router.post("/api/burgers", function(request, response){
+
     burger_model.updateOne([
         "burger_name", "devoured"
     ], [
@@ -35,6 +37,7 @@ router.post("/api/burgers", function(request, response){
 
 //UPDATE/PUT METHOD
 router.put("/api/burgers/:id", function(request, response){
+
     var conditional = "id = " + request.params.id;
 
     console.log("conditional", conditional);
@@ -54,6 +57,7 @@ router.put("/api/burgers/:id", function(request, response){
 
 //DELETE METHOD
 router.delete("/api/burgers/:id", function(request, response){
+    
     var conditional = "id = " + request.params.id;
 
     burger_model.delete(conditional, function(results){
