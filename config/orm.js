@@ -1,5 +1,6 @@
 //Importing MySQL connection
 var connection = require("./connection.js");
+// IF ANY OCCURS OCCUR, TRY THE FOLLOWING ABOVE: ("../")
 
 
 // Helper function for SQL syntax.
@@ -85,21 +86,21 @@ var orm = {
   
         cb(result);
       });
-    }
+    },
     //HW Doesn't require "delete" functionality; could add in at a later date
-    // delete: function(table, condition, cb) {
-    //   var queryString = "DELETE FROM " + table;
-    //   queryString += " WHERE ";
-    //   queryString += condition;
+    delete: function(table, condition, cb) {
+      var queryString = "DELETE FROM " + table;
+      queryString += " WHERE ";
+      queryString += condition;
   
-    //   connection.query(queryString, function(err, result) {
-    //     if (err) {
-    //       throw err;
-    //     }
+      connection.query(queryString, function(err, result) {
+        if (err) {
+          throw err;
+        }
   
-    //     cb(result);
-    //   });
-    // }
+        cb(result);
+      });
+    }
 };
   
 // Export the orm object for model usage.
