@@ -12,12 +12,26 @@ var burger_model = require("../models/burger.js");
 router.get("/", function(request, response){
 
     burger_model.selectAll(function(data){
+
         var hbsObject = {
             //UNCERTAIN if "burgers" is correct
             burgers: data
         };
         console.log(hbsObject);
         response.render("index", hbsObject);
+    });
+});
+
+//ATTTEMPT TO VIEW BURGER LIST VIA URL
+router.get("/api/burger", function(request, response){
+
+    console.log("accessing api of burgers..");
+
+    burger_model.selectAll(function(data){
+        var checkObject = {
+            burgers: data
+        };
+        response.json(checkObject);
     });
 });
 
