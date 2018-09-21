@@ -1,22 +1,33 @@
 <h1>Welcome to Pop's Burgers</h1>
 
-<h2>What's on the menu</h2>
+<h2>What's on the menu to eat</h2>
 
 <ul>
-  {{#each burgers}}
+  {{!-- {{#each burgers}}
     {{#unless this.devoured}}
         {{this.burger_name}}
         <button class="devour-burger" data-id="{{this.id}}" data-newDevoured="{{this.devoured}}"> Devour it!</button>
     {{/unless}}
+  {{/each}} --}}
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=false}}
+    {{/unless}}
   {{/each}}
+
 </ul>
 
 <h2>What's been eaten:</h2>
 
 <ul>
-  {{#each burgers}}
+  {{!-- {{#each burgers}}
     {{#if this.devoured}}
         {{this.burger_name}}
+    {{/if}}
+  {{/each}} --}}
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=true}}
     {{/if}}
   {{/each}}
 </ul>

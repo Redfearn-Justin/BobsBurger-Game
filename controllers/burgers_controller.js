@@ -56,11 +56,18 @@ router.put("/api/burgers/:id", function(request, response){
 
     console.log("conditional", conditional);
 
+    //REQUEST.BODY.DEVOURED IS COMING BACK "UNDEFINED"
+
+    console.log("this is the request.body.devoured: " + request.body.devoured);
+
     burger_model.updateOne({
         
         devoured: request.body.devoured
+
     }, conditional, function(result){
+
         if(result.changedRows == 0){
+
             return response.status(404).end();
         }
         else {
