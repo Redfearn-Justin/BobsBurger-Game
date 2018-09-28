@@ -11,15 +11,17 @@ var burger_model = require("../models/burger.js");
 //GET METHOD
 router.get("/", function(request, response){
 
-    burger_model.selectAll(function(data){
-
+    function doThisWithData(data){
         var hbsObject = {
             //UNCERTAIN if "burgers" is correct
             burgers: data
         };
         console.log(hbsObject);
         response.render("index", hbsObject);
-    });
+    }
+    
+    burger_model.selectAll(doThisWithData);
+    
 });
 
 //ATTTEMPT TO VIEW BURGER LIST VIA URL
@@ -50,7 +52,7 @@ router.post("/api/burgers", function(request, response){
 });
 
 //UPDATE/PUT METHOD
-router.put("/api/burgers/:id", function(request, response){
+router.put("/api/burgers/:id", function(request, response) {
 
     var conditional = "id = " + request.params.id;
 
@@ -82,6 +84,7 @@ router.delete("/api/burgers/:id", function(request, response){
     var conditional = "id = " + request.params.id;
 
     burger_model.delete(conditional, function(results){
+        
         if(result.affectedRows == 0){
             return response.status(404).end();
         }
