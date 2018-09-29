@@ -4,12 +4,6 @@ var orm = require("../config/orm.js");
 //Establishing "burger" object
 var burger = {
     
-    selectOne: function(cb) {
-
-        orm.selectOne("burgers_table", function(res){
-            cb(res);
-        });
-    },
     selectAll: function(cb) {
 
         orm.selectAll("burgers_table", function(res){
@@ -24,10 +18,11 @@ var burger = {
     },
     update: function(objColVals, condition, cb){
 
-        orm.updateOne("burgers_table", objColVals, condition, function(res){
+        orm.update("burgers_table", objColVals, condition, function(res){
             cb(res);
         });
-    }
+    },
+    //add delete function here
 };
 
 //Export db functionality for controller

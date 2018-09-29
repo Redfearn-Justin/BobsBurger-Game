@@ -21,7 +21,7 @@ router.get("/", function(request, response){
     }
     
     burger_model.selectAll(doThisWithData);
-    
+
 });
 
 //ATTTEMPT TO VIEW BURGER LIST VIA URL
@@ -55,6 +55,7 @@ router.post("/api/burgers", function(request, response){
 router.put("/api/burgers/:id", function(request, response) {
 
     var conditional = "id = " + request.params.id;
+    console.log(request.body);
 
     console.log("conditional", conditional);
 
@@ -62,7 +63,7 @@ router.put("/api/burgers/:id", function(request, response) {
 
     console.log("this is the request.body.devoured: " + request.body.devoured);
 
-    burger_model.updateOne({
+    burger_model.update({
         
         devoured: request.body.devoured
 

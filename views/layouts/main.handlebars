@@ -27,16 +27,30 @@
     {{{ body }}}
     
  <script type="text/javascript">
+
     // Make sure we wait to attach our handlers until the DOM is fully loaded.
     $(function() {
+
         $(".devour-burger").on("click", function(event) {
 
+            //problem located here: request in controller is coming back empty!
+
+            event.preventDefault();
+
             var id = $(this).data("id");
+
             var newDevoured = $(this).data("newDevoured");
 
             var newDevouredState = {
-            devoured: newDevoured
+
+                devoured: newDevoured
             };
+
+            console.log("this is the new id: " + id);
+
+            console.log("this is the new state of devour: " + newDevouredState.devoured);
+
+            debugger;
 
             // Send the PUT request.
             $.ajax("/api/burgers/" + id, {
