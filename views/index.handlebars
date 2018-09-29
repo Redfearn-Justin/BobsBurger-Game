@@ -3,12 +3,7 @@
 <h2>What's on the menu to eat</h2>
 
 <ul>
-  {{!-- {{#each burgers}}
-    {{#unless this.devoured}}
-        {{this.burger_name}}
-        <button class="devour-burger" data-id="{{this.id}}" data-newDevoured="{{this.devoured}}"> Devour it!</button>
-    {{/unless}}
-  {{/each}} --}}
+
   {{#each burgers}}
     {{#unless devoured}}
       {{> burgers/burger-block devoured=false}}
@@ -20,11 +15,7 @@
 <h2>What's been eaten:</h2>
 
 <ul>
-  {{!-- {{#each burgers}}
-    {{#if this.devoured}}
-        {{this.burger_name}}
-    {{/if}}
-  {{/each}} --}}
+
   {{#each burgers}}
     {{#if devoured}}
       {{> burgers/burger-block devoured=true}}

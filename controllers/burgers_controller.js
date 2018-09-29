@@ -12,11 +12,13 @@ var burger_model = require("../models/burger.js");
 router.get("/", function(request, response){
 
     function doThisWithData(data){
+
         var hbsObject = {
-            //UNCERTAIN if "burgers" is correct
+
             burgers: data
         };
         console.log(hbsObject);
+
         response.render("index", hbsObject);
     }
     
@@ -30,9 +32,11 @@ router.get("/api/burger", function(request, response){
     console.log("accessing api of burgers..");
 
     burger_model.selectAll(function(data){
+
         var checkObject = {
             burgers: data
         };
+
         response.json(checkObject);
     });
 });
@@ -55,27 +59,19 @@ router.post("/api/burgers", function(request, response){
 router.put("/api/burgers/:id", function(request, response) {
 
     var conditional = "id = " + request.params.id;
-    console.log(request.body);
 
     console.log("conditional", conditional);
+    console.log(request.body);
 
-    //REQUEST.BODY.DEVOURED IS COMING BACK "UNDEFINED"
-
-    console.log("this is the request.body.devoured: " + request.body.devoured);
-
-    burger_model.update({
+      burger_model.update({
         
         devoured: request.body.devoured
 
     }, conditional, function(result){
 
-        if(result.changedRows == 0){
+        
+        response.json("done");
 
-            return response.status(404).end();
-        }
-        else {
-            response.send(200).end();
-        }
     });
 });
 
@@ -86,12 +82,8 @@ router.delete("/api/burgers/:id", function(request, response){
 
     burger_model.delete(conditional, function(results){
         
-        if(result.affectedRows == 0){
-            return response.status(404).end();
-        }
-        else {
-            response.status(200).end();
-        }
+        response.json("done");
+        
     });
 });
 
