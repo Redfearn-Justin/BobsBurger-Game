@@ -6,7 +6,8 @@ var router = express.Router();
 var burger_model = require("../models/burger.js");
 
 
-//routes
+//Routes
+//==================================================
 
 //GET METHOD
 router.get("/", function(request, response){
@@ -26,31 +27,15 @@ router.get("/", function(request, response){
 
 });
 
-//ATTTEMPT TO VIEW BURGER LIST VIA URL
-router.get("/api/burger", function(request, response){
-
-    console.log("accessing api of burgers..");
-
-    burger_model.selectAll(function(data){
-
-        var checkObject = {
-            burgers: data
-        };
-
-        response.json(checkObject);
-    });
-});
-
 //POST METHOD
 router.post("/api/burgers", function(request, response){
 
-    burger_model.updateOne([
+    burger_model.insert([
         "burger_name", "devoured"
     ], [
         request.body.burger_name, request.body.devoured
     ], function(result){
 
-        //verify "result.insertId" nomenclature 
         response.json({id: result.insertId});
     });
 });
@@ -75,7 +60,7 @@ router.put("/api/burgers/:id", function(request, response) {
     });
 });
 
-//DELETE METHOD
+//DELETE METHOD (not required; additional functionality)
 router.delete("/api/burgers/:id", function(request, response){
     
     var conditional = "id = " + request.params.id;

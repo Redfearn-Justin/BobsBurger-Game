@@ -1,34 +1,62 @@
-<h1>Welcome to Pop's Burgers</h1>
+<h1 class="jumbotron text-center bg-info">Welcome to Bob's Burgers</h1>
 
-<h2>What's on the menu to eat</h2>
+<div class="container container-flex allContent">
 
-<ul>
+  <div class="row">
 
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/unless}}
-  {{/each}}
+    <div class="col-md-5 info eatPanel">
 
-</ul>
+      <h2 class="font-italic headerText">What's On The Menu</h2>
 
-<h2>What's been eaten:</h2>
+      <ul>
 
-<ul>
+        {{#each burgers}}
+          {{#unless devoured}}
+            {{> burgers/burger-block devoured=false}}
+          {{/unless}}
+        {{/each}}
 
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/if}}
-  {{/each}}
-</ul>
+      </ul>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
+    </div>
 
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="burger_name">
+    <div class="col"></div> 
+
+    <div class="col-md-5 info eatPanel">
+
+      <h2 class="font-italic headerText">Your Table</h2>
+
+      <ul>
+
+        {{#each burgers}}
+          {{#if devoured}}
+            {{> burgers/burger-block devoured=true}}
+          {{/if}}
+        {{/each}}
+      </ul>
+
+    </div> 
+
   </div>
-  <button type="submit">Click to add!</button>
-</form>
+
+  <div class="row" id="formRow">
+
+    <div class="mx-auto info">
+
+      <h2 class="font-italic headerText">Custom Order</h2>
+
+      <form class="create-form">
+
+        <div class="form-group">
+          <label for="ca">Burger Name:</label>
+          <input type="text" id="ca" name="burger_name">
+        </div>
+        <button type="submit">Place your order!</button>
+      </form>
+      
+    </div>
+
+
+  </div>
+
+</div>

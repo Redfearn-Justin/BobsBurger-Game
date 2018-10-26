@@ -71,7 +71,7 @@ var orm = {
         cb(result);
       });
     },
-    // An example of objColVals would be {name: BigMac, Devoured: true}; Formally: update
+    // An example of objColVals would be {name: BigMac, Devoured: true};
     update: function(table, objColVals, condition, cb) {
       var queryString = "UPDATE " + table;
   
@@ -89,7 +89,8 @@ var orm = {
         cb(result);
       });
     },
-    //HW Doesn't require "delete" functionality; could add in at a later date
+    
+    //FOR additional functionality; not required! (not working)
     delete: function(table, condition, cb) {
       var queryString = "DELETE FROM " + table;
       queryString += " WHERE ";

@@ -12,7 +12,7 @@ var burger = {
     },
     insert: function(cols, vals, cb) {
 
-        orm.insertOne("burgers_table", cols, vals, function(res){
+        orm.insert("burgers_table", cols, vals, function(res){
             cb(res);
         });
     },
