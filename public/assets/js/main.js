@@ -2,9 +2,6 @@ $(function() {
 
         $(".devour-burger").on("click", function(event) {
 
-            //troubleshooting
-            //=====================================================================
-
             event.preventDefault();
 
             var id = $(this).attr("data-id");
