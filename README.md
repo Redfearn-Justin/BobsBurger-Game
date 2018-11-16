@@ -4,17 +4,17 @@
 
 ## Overview
 
-### Technologies used:
-
-* **Backend**: Node.js, SQL, Express.js, Handlebars.js
-* **Frontend**: HTML, CSS, Javascript, Handlebars.js, Bootstrap
-* **Other**: MySQL, Heroku, JawsDB
-
 ### Project Insight
 
 * Using a mixture Handlebars.js and API calls, dynamically move existing burgers and create new burgers at your will. 
 * On the left, you'll see all the burgers that are _on the menu_; on the right you'll see the burgers that're _on your table_; and finally at the bottom, you'll have the option of _adding a burger_ to the menu.
 * Got a _fresh_ idea? Add your burger to the menu! Don't like what you _ordered_? Send it back to the kitchen! Enjoy it? Well, bring it to your table!
+
+### Technologies Utilized
+
+* **Backend**: Node.js, SQL, Express.js, Handlebars.js, Javascript
+* **Frontend**: HTML, CSS, Javascript, Handlebars.js, Bootstrap
+* **Other**: MySQL, Heroku, JawsDB
 
 ## Steps
 
