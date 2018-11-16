@@ -6,8 +6,8 @@
 
 ### Technologies used:
 
-* **Backend**: Node.js, SQL, Express.js
-* **Frontend**: HTML, CSS, Javascript, Handlebars.js
+* **Backend**: Node.js, SQL, Express.js, Handlebars.js
+* **Frontend**: HTML, CSS, Javascript, Handlebars.js, Bootstrap
 * **Other**: MySQL, Heroku, JawsDB
 
 ### Project Insight
