@@ -8,7 +8,7 @@
 
 * **Backend**: Node.js, SQL, Express.js
 * **Frontend**: HTML, CSS, Javascript, Handlebars.js
-* **Other**: MySQL, Herokum, JawsDB
+* **Other**: MySQL, Heroku, JawsDB
 
 ### Project Insight
 
