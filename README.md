@@ -6,9 +6,9 @@
 
 ### Technologies used:
 
-* **Backend**: Node.js & Express.js
+* **Backend**: Node.js, SQL, Express.js
 * **Frontend**: HTML, CSS, Javascript, Handlebars.js
-* **Other**: Heroku & JawsDB
+* **Other**: MySQL, Herokum, JawsDB
 
 ### Project Insight
 
@@ -18,17 +18,20 @@
 
 ## Steps
 
-### _On The Menu_ panel
+### _What's On The Menu_ panel
 
-1) Clicking the "Eat!" button sends that burger to the "on your table" panel
+1) Clicking the "Order!" button sends that burger to the "on your table" panel
 
-### _On Your Table_ panel
+### _Your Table_ panel
 
 1) Clicking on the "Send it back!" button sends that burger straight back to Bob. That'll teach him!
 
-### _Create A Custom Burger_ panel
+### _Custom Order_ panel
 
 1) In the text field provided, enter the name of the burger you'd like Bob and the crew to make
 
 2) When you're satisfied with the name, press the "Submit" button to send your custom burger to Bob, so he can make it specially for you!
 
+## That's it!
+
+![gif2](https://media.giphy.com/media/KEtgWlYYoN6Ni/giphy.gif)
