@@ -16,7 +16,7 @@
 * **Frontend**: HTML, CSS, Javascript, Handlebars.js, Bootstrap
 * **Other**: MySQL, Heroku, JawsDB
 
-## Steps
+## Instructions
 
 ### _What's On The Menu_ panel
 
